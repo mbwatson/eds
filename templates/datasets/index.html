@@ -2,11 +2,20 @@
 
 {% block content %}
 
-  <h1>Data Sets</h1>
-  <ul>
-    {% for dataset in datasets %}
-      <li><a href="{% url 'datasets:detail' dataset.id %}">{{ dataset.title }}</a></li>
-    {% endfor %}
-  </ul>
+    <h1 class="page-title">Data Sets</h1>
+
+    <div class="datasets-list">
+        {% for dataset in datasets %}
+            <div class="dataset">
+                <h2 class="dataset__title"><a href="{% url 'datasets:detail' dataset.id %}">{{ dataset.title }}</a></h2>
+                <div class="dataset__description">
+                    {{ dataset.description }}
+                </div>
+                <div class="dataset__link">
+                    <a href="{{ dataset.link }}" target="_blank">{{ dataset.link }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock content %}

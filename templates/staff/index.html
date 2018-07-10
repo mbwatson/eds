@@ -2,13 +2,25 @@
 
 {% block content %}
 
-  <h1>Staff</h1>
+  <h1 class="page-title">Staff</h1>
 
-  {% for person in staff %}
-    <div>
-      <h4><a href="{% url 'staff:detail' person.id %}">{{ person.display_name }}</a></h4>
-      <h5>{{ person.job_title }}</h5>
-    </div>
-  {% endfor %}
+    {% for person in staff %}
+        <div class="staff-list">
+            <div class="person">
+                <div class="person__photo">
+                    <div class="circular">
+                        <img src="{{ person.photo.url }}" />
+                    </div>
+                </div>
+                <div class="person__details">
+                    <h2 class="person__name"><a href="{% url 'staff:detail' person.id %}">{{ person.display_name }}</a></h2>
+                    <h3 class="person__title">{{ person.job_title }}</h3>
+                    <div class="person__bio">
+                        {{ person.bio }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 
 {% endblock %}

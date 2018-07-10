@@ -2,14 +2,18 @@
 
 {% block content %}
 
-  <h1>Projects</h1>
-  {% for project in projects %}
-    <div>
-      <h3><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></h3>
-      <div>
-        {{ project.summary }}
-      </div>
+    <h1 class="page-title">Projects</h1>
+    
+    <div class="projects-list">
+        {% for project in projects %}
+            <div class="project">
+                <h2 class="project__title"><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></h2>
+                <div class="project__summary">
+                    {{ project.summary }}
+                    <a href="{{ project.website }}">Read More</a>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-  {% endfor %}
 
 {% endblock content %}

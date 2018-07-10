@@ -2,13 +2,16 @@
 
 {% block content %}
 
-  <h1>Publications</h1>
+  <h1 class="page-title">Publications</h1>
 
-  {% for publication in publications %}
-    <a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a>
-    <div>
-      {{ publication.abstract }}
+    <div class="publication-list">
+        {% for publication in publications %}
+            <div class="publication">
+                <h2 class="publication__title"><a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a></h2>
+                <div class="publication__abstract">
+                    {{ publication.abstract }}
+                </div>
+            </div>
+        {% endfor %}
     </div>
-  {% endfor %}
-
 {% endblock content %}
