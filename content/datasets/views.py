@@ -5,7 +5,6 @@ from .models import DataSet
 def index(request):
     datasets = DataSet.objects.all()
     context = {
-        'page_title': 'Data Sets',
         'datasets': datasets
     }
     return render(request, 'datasets/index.html', context)
