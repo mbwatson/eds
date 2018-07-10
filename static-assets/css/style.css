@@ -75,11 +75,14 @@ nav {
     cursor: pointer;
     transition: transform 250ms; }
     nav .hamburger span {
+      transition: background-color 250ms, transform 1000ms;
       content: '';
       width: 100%;
       height: 4px;
       border-radius: 2px;
       background-color: #00abc7; }
+    nav .hamburger:hover span {
+      background-color: #eee; }
 
 body::after {
   background-color: #231f20;
@@ -90,6 +93,18 @@ body.navbar-out {
   body.navbar-out nav {
     transform: translateX(0);
     z-index: 2; }
+    body.navbar-out nav .hamburger span {
+      background-color: #eee; }
+    body.navbar-out nav .hamburger:hover span {
+      background-color: #00abc7; }
+    body.navbar-out nav .hamburger span:nth-child(1) {
+      transform-origin: center;
+      transform: translateY(8px) rotate(45deg); }
+    body.navbar-out nav .hamburger span:nth-child(2) {
+      transform: scaleX(0.2); }
+    body.navbar-out nav .hamburger span:nth-child(3) {
+      transform-origin: center;
+      transform: translateY(-8px) rotate(-45deg); }
   body.navbar-out::after {
     content: '';
     position: fixed;

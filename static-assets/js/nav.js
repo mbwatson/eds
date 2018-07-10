@@ -1,5 +1,5 @@
 const header = document.querySelector('header')
-const navBar = document.getElementsByTagName('nav')[0]
+const navBar = document.querySelector('nav')
 const menu = document.querySelector('.nav__list')
 const hamburger = document.querySelector('.hamburger')
 
