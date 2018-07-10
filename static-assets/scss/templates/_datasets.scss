@@ -1,0 +1,11 @@
+@import '../globals';
+
+.datasets-list {
+    .dataset {
+        @include card;
+        .dataset__title {
+            line-height: 1.25;
+        }
+        .dataset__description {}
+    }
+}
