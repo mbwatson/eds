@@ -5,6 +5,7 @@ from .models import Project
 def index(request):
     projects = Project.objects.all()
     context = {
+        'page_title': 'Projects',
         'projects': projects
     }
     return render(request, 'projects/index.html', context)
@@ -15,6 +16,7 @@ def detail(request, project_id):
     staff = project.staff.all()
     publications = project.publication_set.all()
     context = {
+        'page_title': project.title,
         'project': project,
         'staff': staff,
         'publications': publications,
