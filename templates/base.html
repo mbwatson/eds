@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title>
+    {% if page_title %}
+      {{ page_title }} - 
+    {% endif %}
+    EDS
+  </title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {# <link rel="icon" type="image/png" href="#" /> #}
+  <link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
+
+  {% load static %} {# Generates the absolute URL of static files #}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+</head>
+<body>
+    {% block header %}
+        <header>
+            {% include 'partials/header.html' %}
+        </header>
+    {% endblock %}
+
+    {% block navigation %}
+        <nav>
+            {% include 'partials/navigation.html' %}
+        </nav>
+    {% endblock %}
+
+    {% block main %}
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    {% endblock %}
+
+    {% block footer %}
+        <footer>
+            {% include 'partials/footer.html' %}
+        </footer>
+    {% endblock %}
+
+</body>
+</html>

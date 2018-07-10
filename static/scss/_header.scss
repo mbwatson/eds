@@ -1,0 +1,38 @@
+header {
+    height: 300px;
+    transition: height 500ms;
+    position: relative;
+    overflow: hidden;
+    .header__background {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-position: center;
+        &::after {
+            content: '';
+            background-color: #036;
+            opacity: 0.75;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+    .header__foreground {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 75vw;
+        max-width: 1000px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+}
+@media (max-width: 400px) {
+    header {
+        max-height: 150px;
+    }
+}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Staff</h1>
+
+  {% for person in staff %}
+    <div>
+      <h4><a href="{% url 'staff:detail' person.id %}">{{ person.display_name }}</a></h4>
+      <h5>{{ person.job_title }}</h5>
+    </div>
+  {% endfor %}
+
+{% endblock %}

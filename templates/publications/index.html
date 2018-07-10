@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>Publications</h1>
+
+  {% for publication in publications %}
+    <a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a>
+    <div>
+      {{ publication.abstract }}
+    </div>
+  {% endfor %}
+
+{% endblock content %}

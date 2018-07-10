@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>{{ publication.title}}</h1>
+  <div>
+    <strong>Abstract</strong>
+    {{ publication.abstract }}
+  </div>
+  <div>
+    {{ publication.citation }}
+  </div>
+  <div>
+    <a href="{{ publication.link }}">{{ publication.link }}</a>
+  </div>
+  <div>
+    <strong>Associated Staff</strong>
+    {% for person in staff %}
+      <li><a href="{% url 'staff:detail' person.id %}">{{ person.name }}</a></li>
+    {% endfor %}
+  </div>
+{% endblock %}

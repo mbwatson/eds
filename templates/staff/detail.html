@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>{{ staff_member.name}}</h1>
+  <h3>{{ staff_member.title }}</h3>
+  <h3>{{ staff_member.photo }}</h3>
+  <div>
+    <strong>Bio</strong>
+    {{ staff_member.bio }}
+  </div>
+  <div>
+    <strong>Projects ({{ projects.count }})</strong>
+    {% for project in projects %}
+      <li><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></li>
+    {% endfor %}
+  </div>
+  <div>
+    <strong>Publications ({{ publications.count }})</strong>
+    {% for publication in publications %}
+      <li><a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a></li>
+    {% endfor %}
+  </div>
+{% endblock %}

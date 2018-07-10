@@ -1,0 +1,130 @@
+@import '../globals';
+
+.staff-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .person {
+        @include card;
+        display: flex;
+        flex-direction: row; 
+        .person__photo {
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 2rem;
+            padding: 0;
+            img {
+                display: inline;
+                width: 100%;
+                margin: 0 auto;
+                filter: grayscale(0.5);
+                transition:
+                    filter 750ms,
+                    transform 750ms ease-out;
+            }
+        }
+        .person__details {
+            flex: 1;
+        }
+        .person__name {
+            font-size: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .person__title {
+            font-size: 1rem;
+            margin: 0;
+            margin-bottom: 1rem;
+        }
+        .person__bio {
+            font-size: 0.9rem;
+        }
+        &:hover {
+            .person__photo {
+                img {
+                    filter: grayscale(0);
+                    transform: scale(1.1, 1.1);
+                    transition:
+                        filter 500ms,
+                        transform 500ms ease-out;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .staff-list {
+        .person {
+            flex-direction: column;
+            .person__photo {
+                margin: 1rem auto;
+            }
+            .person__name {
+                margin: 1rem auto;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.person {
+    // &, * { border: 1px solid #f00; }
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "photo name"
+        "photo title"
+        "bio bio"
+        "publications publications"
+        "projects projects";
+    .person__photo {
+        grid-area: photo;
+        max-width: 150px;
+        max-height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 2rem;
+        padding: 0;
+        img {
+            display: inline;
+            width: 100%;
+            margin: 0 auto;
+            filter: grayscale(0.5);
+            transition:
+                filter 750ms,
+                transform 750ms ease-out;
+        }
+    }
+    .person__name-and-title {
+        grid-area: name;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .person__name {
+            font-size: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .person__title {
+            font-size: 1rem;
+            margin: 0;
+        }
+    }
+    .person__bio {
+        grid-area: bio;
+        margin: 1rem 0;
+    }
+    .person__publications {
+        grid-area: publications;
+        margin: 1rem 0;
+    }
+    .person__projects {
+        grid-area: projects;
+        margin: 1rem 0;
+    }
+}

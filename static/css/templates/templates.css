@@ -1,0 +1,169 @@
+.news-list .news-item {
+  border: 0;
+  margin: 1rem 0;
+  padding: 0;
+  flex: 1; }
+  .news-list .news-item .news-item__title {
+    line-height: 1.25; }
+  .news-list .news-item .news-item__date {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #999; }
+
+.projects-list .project {
+  border: 0;
+  margin: 1rem 0;
+  padding: 0;
+  flex: 1; }
+  .projects-list .project .project__image {
+    height: 100px; }
+  .projects-list .project .project__title {
+    line-height: 1.25; }
+  .projects-list .project .project__staff ul {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .projects-list .project .project__staff ul li {
+      display: inline;
+      margin-left: 1rem; }
+
+.project__header {
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin-bottom: 2rem; }
+
+.project__content ul {
+  padding: 0 1rem;
+  margin: 0; }
+
+.publication-list .publication {
+  border: 0;
+  margin: 1rem 0;
+  padding: 0;
+  flex: 1; }
+  .publication-list .publication .publication__title {
+    line-height: 1.25; }
+
+.single-publication .publication__authors ul, .single-publication .publication__projects ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline;
+  margin-left: 0.5rem; }
+  .single-publication .publication__authors ul li, .single-publication .publication__projects ul li {
+    display: inline;
+    margin-right: 0.5rem; }
+.single-publication .publication__projects {
+  margin-bottom: 1rem; }
+.single-publication .publication__abstract {
+  font-size: 1rem;
+  margin-bottom: 1rem; }
+.single-publication .publication__citation {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #aaa; }
+
+.staff-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  .staff-list .person {
+    border: 0;
+    margin: 1rem 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: row; }
+    .staff-list .person .person__photo {
+      max-width: 150px;
+      max-height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 2rem;
+      padding: 0; }
+      .staff-list .person .person__photo img {
+        display: inline;
+        width: 100%;
+        margin: 0 auto;
+        filter: grayscale(0.5);
+        transition: filter 750ms, transform 750ms ease-out; }
+    .staff-list .person .person__details {
+      flex: 1; }
+    .staff-list .person .person__name {
+      font-size: 2rem;
+      margin: 0;
+      padding: 0; }
+    .staff-list .person .person__title {
+      font-size: 1rem;
+      margin: 0;
+      margin-bottom: 1rem; }
+    .staff-list .person .person__bio {
+      font-size: 0.9rem; }
+    .staff-list .person:hover .person__photo img {
+      filter: grayscale(0);
+      transform: scale(1.1, 1.1);
+      transition: filter 500ms, transform 500ms ease-out; }
+
+@media (max-width: 500px) {
+  .staff-list .person {
+    flex-direction: column; }
+    .staff-list .person .person__photo {
+      margin: 1rem auto; }
+    .staff-list .person .person__name {
+      margin: 1rem auto;
+      text-align: center; } }
+.person {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "photo name" "photo title" "bio bio" "publications publications" "projects projects"; }
+  .person .person__photo {
+    grid-area: photo;
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 2rem;
+    padding: 0; }
+    .person .person__photo img {
+      display: inline;
+      width: 100%;
+      margin: 0 auto;
+      filter: grayscale(0.5);
+      transition: filter 750ms, transform 750ms ease-out; }
+  .person .person__name-and-title {
+    grid-area: name;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .person .person__name-and-title .person__name {
+      font-size: 2rem;
+      margin: 0;
+      padding: 0; }
+    .person .person__name-and-title .person__title {
+      font-size: 1rem;
+      margin: 0; }
+  .person .person__bio {
+    grid-area: bio;
+    margin: 1rem 0; }
+  .person .person__publications {
+    grid-area: publications;
+    margin: 1rem 0; }
+  .person .person__projects {
+    grid-area: projects;
+    margin: 1rem 0; }
+
+.data-sets-list .data-set {
+  border: 0;
+  margin: 1rem 0;
+  padding: 0;
+  flex: 1; }
+  .data-sets-list .data-set .data-set__title {
+    line-height: 1.25; }
+
+/*# sourceMappingURL=templates.css.map */
