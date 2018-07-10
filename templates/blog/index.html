@@ -5,9 +5,14 @@
     <h1 class="page-title">Blog</h1>
 
     <div class="posts">
-        <div class="post">
-            a post
-        </div>
+        {% for post in posts %}
+            <h3 class="post__title">
+                <a href="{% url 'blog:detail' post.id %}">{{ post.title }}</a>
+            </h3>
+            <div class="post">
+                {{ post.date_published }}
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock content %}
