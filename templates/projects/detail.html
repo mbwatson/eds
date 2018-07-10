@@ -2,22 +2,22 @@
 
 {% block content %}
 
-  <h1>{{ project.title }}</h1>
-  <div>
-    {{ project.details }}
-  </div>
-  <div>
-    {{ project.website }}
-  </div>
-  <div>
-    <strong>Associated Staff</strong>
-    {% for person in staff %}
-      <li><a href="{% url 'staff:detail' person.id %}">{{ person.name }}</a></li>
-    {% endfor %}
-  </div>
-  <div>
-    <strong>Associated Publications</strong>
-    {% for publication in publications %}
-      <li><a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a></li>
-    {% endfor %}
+    <h1 class="page-title">{{ project.title }}</h1>
+    <div>
+        {{ project.details }}
+    </div>
+    <div>
+        {{ project.website }}
+    </div>
+    <div>
+        <strong>Associated Staff</strong>
+        {% for staff_member in staff %}
+            <li><a href="{% url 'staff:detail' staff_member.id %}">{{ staff_member.display_name }}</a></li>
+        {% endfor %}
+    </div>
+    <div>
+        <strong>Associated Publications</strong>
+        {% for publication in publications %}
+            <li><a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a></li>
+        {% endfor %}
 {% endblock %}

@@ -2,21 +2,31 @@
 
 {% block content %}
 
-  <h1>{{ publication.title}}</h1>
-  <div>
-    <strong>Abstract</strong>
-    {{ publication.abstract }}
-  </div>
-  <div>
-    {{ publication.citation }}
-  </div>
-  <div>
-    <a href="{{ publication.link }}">{{ publication.link }}</a>
-  </div>
-  <div>
-    <strong>Associated Staff</strong>
-    {% for person in staff %}
-      <li><a href="{% url 'staff:detail' person.id %}">{{ person.name }}</a></li>
-    {% endfor %}
+  <div class="single-publication">
+      <h1 class="publication__title">{{ publication.title }}</h1>
+      <div class="publication__authors">
+          Authors:
+          <ul>
+              {% for staff_member in staff %}
+                  <li><a href="{% url 'staff:detail' staff_member.id %}">{{ staff_member.display_name }}</a></li>
+              {% endfor %}
+          </ul>
+      </div>
+      <div class="publication__projects">
+          Related Projects:
+          <ul>
+              {% for project in projects %}
+                  <li><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></li>
+              {% endfor %}
+          </ul>
+      </div>
+      <div class="publication__abstract">
+          <h3>Abstract</h3>
+          {{ publication.abstract }}
+      </div>
+      <div class="publication__citation">
+          {{ publication.citation }}
+      </div>
   </div>
 {% endblock %}
+
