@@ -13,7 +13,7 @@ def index(request):
 def detail(request, project_id):
     project = get_object_or_404(Project, id=project_id)
     staff = project.staff.all()
-    publications = project.publications.all()
+    publications = project.publication_set.all()
     context = {
         'project': project,
         'staff': staff,
