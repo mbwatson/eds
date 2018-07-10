@@ -19,29 +19,32 @@
 
 </head>
 <body>
-    {% block header %}
-        <header>
-            {% include 'partials/header.html' %}
-        </header>
-    {% endblock %}
+  {% block header %}
+    <header>
+      {% include 'partials/header.html' %}
+    </header>
+  {% endblock %}
 
-    {% block navigation %}
-        <nav>
-            {% include 'partials/navigation.html' %}
-        </nav>
-    {% endblock %}
+  {% block navigation %}
+    <nav>
+      {% include 'partials/navigation.html' %}
+    </nav>
+  {% endblock %}
 
-    {% block main %}
-        <main>
-            {% block content %}{% endblock %}
-        </main>
-    {% endblock %}
+  {% block main %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  {% endblock %}
 
-    {% block footer %}
-        <footer>
-            {% include 'partials/footer.html' %}
-        </footer>
-    {% endblock %}
+  {% block footer %}
+    <footer>
+      {% include 'partials/footer.html' %}
+    </footer>
+  {% endblock %}
 
+  {% load static %}
+  <script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
 </body>
 </html>

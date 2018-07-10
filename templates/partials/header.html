@@ -1,3 +1,4 @@
+{% load static %}
 <div class="header__background"
-    style="background: url(''); background-size: 120%;"></div>
-<img class="header__foreground" src=""/>
+    style="background: url('{% static 'images/header_background.jpg' %}'); background-size: 120%;"></div>
+<img class="header__foreground" src="{% static 'images/header_foreground.png' %}"/>
