@@ -163,12 +163,12 @@
     grid-area: projects;
     margin: 1rem 0; }
 
-.data-sets-list .data-set {
+.datasets-list .dataset {
   border: 0;
   margin: 1rem 0;
   padding: 0;
   flex: 1; }
-  .data-sets-list .data-set .data-set__title {
+  .datasets-list .dataset .dataset__title {
     line-height: 1.25; }
 
 /*# sourceMappingURL=templates.css.map */
