@@ -1,5 +1,19 @@
 from django.contrib import admin
 from .models import Category, Post
 
-admin.site.register(Category)
-admin.site.register(Post)
+#
+
+class CategoryAdmin(admin.ModelAdmin):
+    exclude = ('slug',)
+
+admin.site.register(Category, CategoryAdmin)
+
+#
+
+class PostAdmin(admin.ModelAdmin):
+    exclude = ('slug',)
+    list_display = ('title', 'status', 'category', 'date_created',)
+    list_filter = ('category', 'status',)
+    search_fields = ('title', 'body',)
+
+admin.site.register(Post, PostAdmin)
