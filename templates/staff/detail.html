@@ -2,9 +2,9 @@
 
 {% block content %}
 
-  <h1>{{ staff_member.name}}</h1>
-  <h3>{{ staff_member.title }}</h3>
-  <h3>{{ staff_member.photo }}</h3>
+  <h1>{{ staff_member.display_name }}</h1>
+  <h3>{{ staff_member.job_title }}</h3>
+  <img src="{{ staff_member.photo.url }}" width="200" />
   <div>
     <strong>Bio</strong>
     {{ staff_member.bio }}
