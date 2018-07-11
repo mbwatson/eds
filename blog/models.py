@@ -8,7 +8,8 @@ class Category(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     date_published = models.DateTimeField()
-
+    class Meta:
+            verbose_name_plural = "Categories"
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Category, self).save(*args, **kwargs)
