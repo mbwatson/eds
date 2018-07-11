@@ -37,9 +37,16 @@ class Post(models.Model):
     class Meta:
         ordering = ['-create_date']
 
+    def __str__(self):
+        return self.title
+
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
 
-    def __str__(self):
-        return self.title
+    def published(self):
+        from django.utils import timezone
+        past_publish_date = self.publish_date <= timezone.now()
+        has_publish_status = self.status == 'Published'
+        return past_publish_date and has_publish_status
+    
