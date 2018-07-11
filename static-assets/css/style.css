@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo|Economica|Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Arvo|Economica|Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Arvo|Economica|Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Economica|Open+Sans");
 header {
   height: 300px;
   transition: height 500ms;
@@ -363,6 +364,19 @@ footer {
   flex: 1; }
   .datasets-list .dataset .dataset__title {
     line-height: 1.25; }
+
+.posts .post {
+  border: 0;
+  margin: 1rem 0;
+  padding: 0;
+  flex: 1; }
+  .posts .post .post__title {
+    line-height: 1.25; }
+  .posts .post .post__meta {
+    font-size: 0.8em;
+    text-align: right;
+    color: #00748d;
+    font-style: italic; }
 
 *, *::before, *::after {
   box-sizing: border-box; }

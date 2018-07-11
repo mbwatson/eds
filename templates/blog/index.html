@@ -6,11 +6,16 @@
 
     <div class="posts">
         {% for post in posts %}
-            <h3 class="post__title">
-                <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
-            </h3>
             <div class="post">
-                {{ post.date_published }}
+                <h3 class="post__title">
+                    <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+                </h3>
+                <div class="post__summary">
+                    {{ post.body|truncatewords_html:30 }}
+                </div>
+                <div class="post__meta">
+                    {{ post.date_published }}
+                </div>
             </div>
         {% endfor %}
     </div>

@@ -1,0 +1,16 @@
+@import '../globals';
+
+.posts {
+    .post {
+        @include card;
+        .post__title {
+            line-height: 1.25;
+        }
+        .post__meta {
+            font-size: 0.8em;
+            text-align: right;
+            color: $dark-teal;
+            font-style: italic;
+        }
+    }
+}
