@@ -16,3 +16,12 @@ def detail(request, post_slug):
         'post': post,
     }
     return render(request, 'blog/detail.html', context)
+
+def category(request, category_slug):
+    category = get_object_or_404(Category, slug=category_slug)
+    posts = get_list_or_404(Post, category=category.pk)
+    context = {
+        'page_title': category.title,
+        'posts': posts,
+    }
+    return render(request, 'blog/category.html', context)
