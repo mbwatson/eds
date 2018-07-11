@@ -3,9 +3,11 @@ from .models import Category, Post
 
 def index(request):
     posts = get_list_or_404(Post)
+    published_posts = filter(lambda p: p.published(), posts)
+
     context = {
         'page_title': 'Blog',
-        'posts': posts,
+        'posts': published_posts,
     }
     return render(request, 'blog/index.html', context)
 
