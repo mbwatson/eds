@@ -8,7 +8,6 @@ class Category(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
-    publish_date = models.DateTimeField()
     
     class Meta:
         verbose_name_plural = "Categories"
@@ -33,7 +32,7 @@ class Post(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Draft')
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
-    publish_date = models.DateTimeField()
+    publish_date = models.DateTimeField(null=True)
 
     class Meta:
         ordering = ['-create_date']
