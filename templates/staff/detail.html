@@ -19,7 +19,7 @@
           <h3>Publications</h3>
           <ul>
               {% for publication in publications %}
-                  <li><a href="{{ publication.url }}">{{ publication.title }}</a></li>
+                  <li><a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a></li>
               {% endfor %}
           </ul>
       </div>
@@ -27,7 +27,7 @@
           <h3>Projects</h3>
           <ul>
               {% for project in projects %}
-                  <li><a href="{{ project.url }}">{{ project.title }}</a></li>
+                  <li><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></li>
               {% endfor %}
           </ul>
       </div>
