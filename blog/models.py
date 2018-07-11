@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.utils import timezone
 
 class Category(models.Model):
     title = models.CharField(max_length=255,null=False)
@@ -23,7 +24,7 @@ class Category(models.Model):
 class Post(models.Model):
     STATUS_CHOICES = (
         ('Draft', 'Draft'),
-        ('Published', 'Published'),
+        ('Final', 'Final'),
     )
     title = models.CharField(max_length=255,null=False)
     slug = models.SlugField(max_length=255, unique=True)
@@ -45,8 +46,7 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
 
     def published(self):
-        from django.utils import timezone
         past_publish_date = self.publish_date <= timezone.now()
-        has_publish_status = self.status == 'Published'
+        has_publish_status = self.status == 'Final'
         return past_publish_date and has_publish_status
     
