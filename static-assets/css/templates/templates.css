@@ -192,4 +192,11 @@
     color: #00748d;
     font-style: italic; }
 
+.post .post__date {
+  font-size: 0.8em;
+  text-align: right;
+  color: #00748d;
+  font-style: italic;
+  margin-bottom: 1rem; }
+
 /*# sourceMappingURL=templates.css.map */
