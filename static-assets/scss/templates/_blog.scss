@@ -1,10 +1,23 @@
 @import '../globals';
 
 .posts {
+    // *, & {border: 1px solid #f00;}
     .post {
         @include card;
+        .post__heading {
+            display: flex;
+            flex-direction: row;
+            @media (max-width: 600px) {
+                flex-direction: column;
+            }
+        }
         .post__title {
             line-height: 1.25;
+            flex: 1;
+        }
+        .post__category {
+        }
+        .post__body {
         }
         .post__meta {
             font-size: 0.8em;

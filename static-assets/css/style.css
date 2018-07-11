@@ -370,8 +370,15 @@ footer {
   margin: 1rem 0;
   padding: 0;
   flex: 1; }
+  .posts .post .post__heading {
+    display: flex;
+    flex-direction: row; }
+    @media (max-width: 600px) {
+      .posts .post .post__heading {
+        flex-direction: column; } }
   .posts .post .post__title {
-    line-height: 1.25; }
+    line-height: 1.25;
+    flex: 1; }
   .posts .post .post__meta {
     font-size: 0.8em;
     text-align: right;
