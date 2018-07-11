@@ -3,10 +3,9 @@ from .models import Category, Post
 
 def index(request):
     posts = get_list_or_404(Post)
-    published_posts = filter(lambda p: p.published(), posts)
     context = {
         'page_title': 'Blog',
-        'posts': published_posts,
+        'posts': posts,
     }
     return render(request, 'blog/index.html', context)
 
@@ -21,7 +20,6 @@ def detail(request, post_slug):
 def category(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
     posts = get_list_or_404(Post, category=category.pk)
-    published_posts = filter(lambda p: p.published(), posts)
     context = {
         'page_title': category.title,
         'category': category,

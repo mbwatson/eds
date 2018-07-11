@@ -23,7 +23,7 @@ class Category(models.Model):
 class Post(models.Model):
     STATUS_CHOICES = (
         ('Draft', 'Draft'),
-        ('Final', 'Final'),
+        ('Published', 'Published'),
     )
     title = models.CharField(max_length=255,null=False)
     slug = models.SlugField(max_length=255, unique=True)
@@ -32,10 +32,9 @@ class Post(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Draft')
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
-    publish_date = models.DateTimeField(null=True)
 
     class Meta:
-        ordering = ['-publish_date']
+        ordering = ['-create_date']
 
     def __str__(self):
         return self.title
@@ -43,9 +42,4 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
-
-    def published(self):
-        past_publish_date = self.publish_date <= timezone.now()
-        has_publish_status = self.status == 'Final'
-        return past_publish_date and has_publish_status
     
