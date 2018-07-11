@@ -22,6 +22,7 @@ def category(request, category_slug):
     posts = get_list_or_404(Post, category=category.pk)
     context = {
         'page_title': category.title,
+        'category': category,
         'posts': posts,
     }
     return render(request, 'blog/category.html', context)

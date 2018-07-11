@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 class="page-title">{{ category.title }}</h1>
+
+    <div class="posts">
+        {% for post in posts %}
+            <div class="post">
+                <div class="post__heading">
+                    <h3 class="post__title">
+                        <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+                    </h3>
+                    <div class="post__category">Posted in {{ post.category }}</div>
+                </div>
+                <div class="post__summary">
+                    {{ post.body|truncatewords_html:30 }}
+                </div>
+                <div class="post__meta">
+                    {{ post.date_published }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
