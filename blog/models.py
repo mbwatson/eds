@@ -5,12 +5,13 @@ class Category(models.Model):
     title = models.CharField(max_length=255,null=False)
     description = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_updated = models.DateTimeField(auto_now=True)
-    date_published = models.DateTimeField()
+    create_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+    publish_date = models.DateTimeField()
     
     class Meta:
         verbose_name_plural = "Categories"
+        ordering = ['-create_date']
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
@@ -29,8 +30,12 @@ class Post(models.Model):
     body = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Draft')
-    date_created = models.DateTimeField(auto_now_add=True)
-    date_published = models.DateTimeField(auto_now=True)
+    create_date = models.DateTimeField(auto_now_add=True)
+    update_date = models.DateTimeField(auto_now=True)
+    publish_date = models.DateTimeField()
+
+    class Meta:
+        ordering = ['-create_date']
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

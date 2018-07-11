@@ -12,7 +12,7 @@ admin.site.register(Category, CategoryAdmin)
 
 class PostAdmin(admin.ModelAdmin):
     exclude = ('slug',)
-    list_display = ('title', 'status', 'category', 'date_created',)
+    list_display = ('title', 'status', 'category', 'create_date',)
     list_filter = ('category', 'status',)
     search_fields = ('title', 'body',)
 
