@@ -11,7 +11,7 @@ class Category(models.Model):
     
     class Meta:
         verbose_name_plural = "Categories"
-        ordering = ['-create_date']
+        ordering = ['title']
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
@@ -35,7 +35,7 @@ class Post(models.Model):
     publish_date = models.DateTimeField(null=True)
 
     class Meta:
-        ordering = ['-create_date']
+        ordering = ['-publish_date']
 
     def __str__(self):
         return self.title
