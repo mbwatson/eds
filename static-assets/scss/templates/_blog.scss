@@ -2,6 +2,15 @@
 
 .posts {
     // *, & {border: 1px solid #f00;}
+    .posts__filters {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .posts__filters__item {
+            margin: 0 1rem;
+        }
+    }
     .post {
         @include card;
         .post__heading {

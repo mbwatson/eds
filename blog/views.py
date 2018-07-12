@@ -3,8 +3,10 @@ from .models import Category, Post
 
 def index(request):
     posts = get_list_or_404(Post)
+    categories = get_list_or_404(Category)
     context = {
         'page_title': 'Blog',
+        'categories': categories,
         'posts': posts,
     }
     return render(request, 'blog/index.html', context)

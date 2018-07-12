@@ -62,3 +62,16 @@ p {
     display: flex;
     flex-direction: column;
 }
+
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    .sidebar {
+        flex: 1;
+        min-width: 200px;
+        padding-top: 4rem;
+    }
+    .main {
+        flex: 4;
+    }
+}
