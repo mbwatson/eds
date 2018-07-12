@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo|Economica|Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Arvo|Economica|Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Arvo|Economica|Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Arvo|Economica|Open+Sans");
 .news-list .news-item {
   border: 0;
   margin: 1rem 0;
@@ -170,5 +171,32 @@
   flex: 1; }
   .datasets-list .dataset .dataset__title {
     line-height: 1.25; }
+
+.posts .post {
+  border: 0;
+  margin: 1rem 0;
+  padding: 0;
+  flex: 1; }
+  .posts .post .post__heading {
+    display: flex;
+    flex-direction: row; }
+    @media (max-width: 600px) {
+      .posts .post .post__heading {
+        flex-direction: column; } }
+  .posts .post .post__title {
+    line-height: 1.25;
+    flex: 1; }
+  .posts .post .post__meta {
+    font-size: 0.8em;
+    text-align: right;
+    color: #00748d;
+    font-style: italic; }
+
+.post .post__date {
+  font-size: 0.8em;
+  text-align: right;
+  color: #00748d;
+  font-style: italic;
+  margin-bottom: 1rem; }
 
 /*# sourceMappingURL=templates.css.map */
