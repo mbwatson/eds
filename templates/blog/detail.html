@@ -7,7 +7,7 @@
             {{ post.create_date }}
         </div>
         <div class="post__body">
-            {{ post.body }}
+            {{ post.body|safe }}
         </div>
     </div>
 {% endblock %}
