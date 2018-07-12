@@ -29,6 +29,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=255, unique=True)
     body = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
+    photo = models.ImageField(upload_to='post_pics', blank=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Draft')
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
