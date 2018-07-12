@@ -29,6 +29,15 @@
 }
 
 .post {
+    .post__photo {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        overflow: hidden;
+        img {
+            max-width: 100%;
+        }
+    }
     .post__date {
         font-size: 0.8em;
         text-align: right;

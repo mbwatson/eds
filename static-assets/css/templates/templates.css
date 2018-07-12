@@ -192,6 +192,13 @@
     color: #00748d;
     font-style: italic; }
 
+.post .post__photo {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden; }
+  .post .post__photo img {
+    max-width: 100%; }
 .post .post__date {
   font-size: 0.8em;
   text-align: right;
