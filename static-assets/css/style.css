@@ -86,9 +86,16 @@ nav {
       background-color: #eee; }
 
 body::after {
+  content: '';
   background-color: #231f20;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: 1;
   opacity: 0;
-  transition: opacity 500ms; }
+  transition: opacity 1000ms; }
 body.navbar-out {
   overflow: hidden; }
   body.navbar-out nav {
@@ -107,14 +114,10 @@ body.navbar-out {
       transform-origin: center;
       transform: translateY(-8px) rotate(-45deg); }
   body.navbar-out::after {
-    content: '';
-    position: fixed;
-    left: 0;
-    top: 0;
     height: 100vh;
     width: 100vw;
     opacity: 0.75;
-    z-index: 1; }
+    transition: opacity 1000ms ease-out; }
 
 @media (min-width: 768px) {
   nav {
