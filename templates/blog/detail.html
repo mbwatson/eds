@@ -3,6 +3,11 @@
 {% block content %}
     <h1 class="page-title post__title">{{ post.title }}</h1>
     <div class="post">
+        {% if post.photo %}
+            <div class="post__photo">
+                <img src="{{ post.photo.url }}" />
+            </div>
+        {% endif %}
         <div class="post__date">
             {{ post.create_date }}
         </div>
