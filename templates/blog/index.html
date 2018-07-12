@@ -7,7 +7,7 @@
 
     <div class="posts">
         <ul class="posts__filters">
-            <li class="posts__filters__item"><a href="{% url 'blog:index' %}">All</a></li>
+            <li class="posts__filters__item"><a href="{% url 'blog:index' %}" class="active">All</a></li>
             {% for category in categories %}
                 <li class="posts__filters__item"><a href="{% url 'blog:category' category.slug %}">{{ category.title }}</a></li>
             {% endfor %}
