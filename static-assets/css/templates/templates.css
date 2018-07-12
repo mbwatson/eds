@@ -172,6 +172,13 @@
   .datasets-list .dataset .dataset__title {
     line-height: 1.25; }
 
+.posts .posts__filters {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .posts .posts__filters .posts__filters__item {
+    margin: 0 1rem; }
 .posts .post {
   border: 0;
   margin: 1rem 0;

@@ -1,10 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'no_sidebar.html' %}
 
 {% block content %}
 
     <h1 class="page-title">Blog</h1>
 
+
     <div class="posts">
+        <ul class="posts__filters">
+            <li class="posts__filters__item"><a href="{% url 'blog:index' %}">All</a></li>
+            {% for category in categories %}
+                <li class="posts__filters__item"><a href="{% url 'blog:category' category.slug %}">{{ category.title }}</a></li>
+            {% endfor %}
+        </ul>
         {% for post in posts %}
             <div class="post">
                 <div class="post__heading">
@@ -25,4 +32,4 @@
         {% endfor %}
     </div>
 
-{% endblock content %}
+{% endblock %}

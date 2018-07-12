@@ -1,36 +1,36 @@
-{% extends 'base.html' %}
+{% extends 'no_sidebar.html' %}
 
 {% block content %}
 
-  <div class="person">
-      <div class="person__photo">
-          <div class="circular">
-              <img src="{{ staff_member.photo.url }}" />
-          </div>
-      </div>
-      <div class="person__name-and-title">
-          <h1 class="person__name">{{ staff_member.display_name }}</h1>
-          <h2 class="person__title">{{ staff_member.job_title }}</h2>
-      </div>
-      <div class="person__bio">
-          {{ staff_member.bio }}
-      </div>
-      <div class="person__publications">
-          <h3>Publications</h3>
-          <ul>
-              {% for publication in publications %}
-                  <li><a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a></li>
-              {% endfor %}
-          </ul>
-      </div>
-      <div class="person__projects">
-          <h3>Projects</h3>
-          <ul>
-              {% for project in projects %}
-                  <li><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></li>
-              {% endfor %}
-          </ul>
-      </div>
-  </div>
+    <div class="person">
+            <div class="person__photo">
+                    <div class="circular">
+                            <img src="{{ staff_member.photo.url }}" />
+                    </div>
+            </div>
+            <div class="person__name-and-title">
+                    <h1 class="person__name">{{ staff_member.display_name }}</h1>
+                    <h2 class="person__title">{{ staff_member.job_title }}</h2>
+            </div>
+            <div class="person__bio">
+                    {{ staff_member.bio }}
+            </div>
+            <div class="person__publications">
+                    <h3>Publications</h3>
+                    <ul>
+                            {% for publication in publications %}
+                                    <li><a href="{% url 'publications:detail' publication.id %}">{{ publication.title }}</a></li>
+                            {% endfor %}
+                    </ul>
+            </div>
+            <div class="person__projects">
+                    <h3>Projects</h3>
+                    <ul>
+                            {% for project in projects %}
+                                    <li><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></li>
+                            {% endfor %}
+                    </ul>
+            </div>
+    </div>
 
 {% endblock %}

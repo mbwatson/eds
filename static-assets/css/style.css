@@ -365,6 +365,13 @@ footer {
   .datasets-list .dataset .dataset__title {
     line-height: 1.25; }
 
+.posts .posts__filters {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+  .posts .posts__filters .posts__filters__item {
+    margin: 0 1rem; }
 .posts .post {
   border: 0;
   margin: 1rem 0;
@@ -441,5 +448,15 @@ p {
 [class*="list"] {
   display: flex;
   flex-direction: column; }
+
+.container {
+  display: flex;
+  flex-flow: row nowrap; }
+  .container .sidebar {
+    flex: 1;
+    min-width: 200px;
+    padding-top: 4rem; }
+  .container .main {
+    flex: 4; }
 
 /*# sourceMappingURL=style.css.map */
