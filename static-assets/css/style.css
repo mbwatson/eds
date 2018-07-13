@@ -52,10 +52,11 @@ nav {
   nav .nav__list {
     display: flex;
     flex-direction: column;
-    align-items: left; }
+    align-items: left;
+    margin-top: 2rem; }
     nav .nav__list li a {
       background-color: #231f20;
-      padding: 0.5em 1em;
+      padding: 1em;
       line-height: 3;
       color: #eee;
       font-weight: bold;
