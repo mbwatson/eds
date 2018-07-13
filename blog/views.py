@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404
 from .models import Category, Post
 
 def index(request):
-    posts = get_list_or_404(Post)
+    posts = get_list_or_404(Post.objects.published())
     categories = get_list_or_404(Category)
     context = {
         'categories': categories,
@@ -20,7 +20,7 @@ def detail(request, post_slug):
 def category(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
     categories = get_list_or_404(Category)
-    posts = get_list_or_404(Post, category=category.pk)
+    posts = get_list_or_404(Post.objects.published(), category=category.pk)
     context = {
         'category': category,
         'categories': categories,
