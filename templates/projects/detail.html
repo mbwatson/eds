@@ -12,7 +12,7 @@
     <div>
         <strong>Associated Staff</strong>
         {% for staff_member in staff %}
-            <li><a href="{% url 'staff:detail' staff_member.id %}">{{ staff_member.display_name }}</a></li>
+            <li><a href="{% url 'staff:detail' staff_member.slug %}">{{ staff_member.display_name }}</a></li>
         {% endfor %}
     </div>
     <div>
