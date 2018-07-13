@@ -21,8 +21,9 @@
                     <h3 class="post__title">
                         <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
                     </h3>
-                    <div class="post__category">
+                    <div class="post__meta">
                         Posted in <a href="{% url 'blog:category' post.category.slug %}">{{ post.category }}</a>
+                        on {{ post.publish_date }}
                     </div>
                 </div>
                 <div class="post__summary">
