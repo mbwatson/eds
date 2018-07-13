@@ -10,8 +10,8 @@ def index(request):
     }
     return render(request, 'staff/index.html', context)
 
-def detail(request, staff_id):
-    staff_member = get_object_or_404(StaffMember, id=staff_id)
+def detail(request, staff_slug):
+    staff_member = get_object_or_404(StaffMember, slug=staff_slug)
     projects = staff_member.project_set.all()
     publications = staff_member.publication_set.all()
     context = {
