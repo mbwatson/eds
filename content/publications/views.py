@@ -1,4 +1,7 @@
 from django.shortcuts import get_object_or_404, render
+import requests
+from django.http import HttpResponse
+import json
 
 from .models import Publication
 
@@ -21,3 +24,12 @@ def detail(request, publication_id):
         'projects': projects,
     }
     return render(request, 'publications/detail.html', context)
+
+# zoterou zoser key for api calls 5029621
+
+def zotero(request):
+    response = requests.get('https://jsonplaceholder.typicode.com/posts/11')
+    # response = requests.get('https://api.zotero.org/users/5029621/collections?v=3')
+    items = response.json()
+    return HttpResponse(json.dumps(items))
+
