@@ -16,6 +16,10 @@ function placeNavbar() {
     }
 }
 
+function closeNavBar() {
+    document.body.classList.remove('navbar-out')
+}
+
 // Place navigation bar, depending on scrolled amount
 
 window.addEventListener('load', placeNavbar)
@@ -25,4 +29,10 @@ window.addEventListener('scroll', placeNavbar)
 
 hamburger.addEventListener('click', () => {
     document.body.classList.toggle('navbar-out');
+})
+
+window.addEventListener('click', (e) => {
+    if (e.target.localName === 'body') {
+        closeNavBar();
+    }
 })
