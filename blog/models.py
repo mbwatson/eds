@@ -20,6 +20,10 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+class PostManager(models.Manager):
+    def published(self):
+        return self.filter(status='Published').filter(publish_date__lte=timezone.now())
+
 class Post(models.Model):
     STATUS_CHOICES = (
         ('Draft', 'Draft'),
@@ -33,7 +37,10 @@ class Post(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='Draft')
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
+    publish_date = models.DateTimeField(blank=True, null=True)
 
+    objects = PostManager()
+    
     class Meta:
         ordering = ['-create_date']
 
@@ -43,4 +50,5 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+
     

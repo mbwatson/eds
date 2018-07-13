@@ -18,15 +18,14 @@
                     <h3 class="post__title">
                         <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
                     </h3>
-                    <div class="post__category">
-                        Posted in <a href="{% url 'blog:category' post.category.slug %}">{{ post.category }}</a>
-                    </div>
                 </div>
                 <div class="post__summary">
                     {{ post.body|safe|truncatewords_html:50 }}
                 </div>
                 <div class="post__meta">
-                    {{ post.create_date }}
+                    Posted in
+                    <a href="{% url 'blog:category' post.category.slug %}">{{ post.category }}</a>
+                    on {{ post.publish_date }}
                 </div>
             </div>
         {% endfor %}
