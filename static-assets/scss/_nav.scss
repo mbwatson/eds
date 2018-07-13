@@ -13,11 +13,12 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: left;
+        margin-top: 2rem;
         li {
             a {
                 background-color: $dark-gray;
-                padding: 0.5em 1em;
-                    line-height: 3;
+                padding: 1em;
+                line-height: 3;
                 color: #eee;
                 font-weight: bold;
                 transition:

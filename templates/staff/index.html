@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <div class="person__details">
-                    <h2 class="person__name"><a href="{% url 'staff:detail' person.id %}">{{ person.display_name }}</a></h2>
+                    <h2 class="person__name"><a href="{% url 'staff:detail' person.slug %}">{{ person.display_name }}</a></h2>
                     <h3 class="person__title">{{ person.job_title }}</h3>
                     <div class="person__bio">
                         {{ person.bio }}
