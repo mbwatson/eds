@@ -46,6 +46,13 @@
   padding: 0 1rem;
   margin: 0; }
 
+.project .project__details img.project__image {
+  width: 50%;
+  max-width: 300px;
+  height: auto;
+  margin: 0.5rem 1rem 1rem 0.5rem;
+  float: left; }
+
 .publication-list .publication {
   border: 0;
   margin: 1rem 0;
