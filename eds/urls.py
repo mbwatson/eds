@@ -15,3 +15,5 @@ urlpatterns = [
     path('datasets/', include('content.datasets.urls')),
     path('blog/', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = 'Earth Data Science Administration'
