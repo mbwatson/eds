@@ -10,7 +10,6 @@
                 <h2 class="project__title"><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></h2>
                 <div class="project__summary">
                     {{ project.summary }}
-                    <a href="{{ project.website }}">Read More</a>
                 </div>
             </div>
         {% endfor %}
