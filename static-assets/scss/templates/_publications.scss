@@ -9,6 +9,19 @@
         .publication__abstract {
 
         }
+        .publication__authors {
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                display: inline;
+                margin-left: 0.5rem;
+                li {
+                    display: inline;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
     }
 }
 

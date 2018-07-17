@@ -60,6 +60,15 @@
   flex: 1; }
   .publication-list .publication .publication__title {
     line-height: 1.25; }
+  .publication-list .publication .publication__authors ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline;
+    margin-left: 0.5rem; }
+    .publication-list .publication .publication__authors ul li {
+      display: inline;
+      margin-right: 0.5rem; }
 
 .single-publication .publication__authors ul, .single-publication .publication__projects ul {
   margin: 0;

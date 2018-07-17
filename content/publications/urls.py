@@ -7,5 +7,5 @@ app_name = 'publications'
 urlpatterns = [
     path('', views.index, name='index'),
     path('<int:publication_id>', views.detail, name='detail'),
-    path('zotero', views.zotero),
+    path('zotero/', views.zotero),
 ]
