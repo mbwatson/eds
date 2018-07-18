@@ -12,6 +12,7 @@ urlpatterns = [
     path('staff/', include('content.staff.urls')),
     path('projects/', include('content.projects.urls')),
     path('publications/', include('content.publications.urls')),
+    path('zotero/', include('content.zotero.urls')),
     path('datasets/', include('content.datasets.urls')),
     path('blog/', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
