@@ -5,35 +5,54 @@
     <h1 class="page-title">{{ category.title }}</h1>
 
     <div class="posts">
+        
         <ul class="posts__filters">
+            
             <li class="posts__filters__item">
                 <a href="{% url 'blog:index' %}">All</a>
             </li>
+
             {% for cat in categories %}
+
                 <li class="posts__filters__item">
                     <a href="{% url 'blog:category' cat.slug %}" class="{% if category.pk == cat.pk %}active{% endif %}">{{ cat.title }}</a>
                 </li>
+
             {% endfor %}
+
         </ul>
-        {% for post in posts %}
-            <div class="post">
-                <div class="post__heading">
-                    <h3 class="post__title">
-                        <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
-                    </h3>
+        {% if posts %}
+
+            {% for post in posts %}
+            
+                <div class="post">
+                    <div class="post__heading">
+                        <h3 class="post__title">
+                            <a href="{% url 'blog:detail' post.slug %}">{{ post.title }}</a>
+                        </h3>
+                        <div class="post__meta">
+                            Posted in <a href="{% url 'blog:category' post.category.slug %}">{{ post.category }}</a>
+                            on {{ post.publish_date }}
+                        </div>
+                    </div>
+                    <div class="post__summary">
+                        {{ post.body|truncatewords_html:30 }}
+                    </div>
                     <div class="post__meta">
-                        Posted in <a href="{% url 'blog:category' post.category.slug %}">{{ post.category }}</a>
-                        on {{ post.publish_date }}
+                        {{ post.date_published }}
                     </div>
                 </div>
-                <div class="post__summary">
-                    {{ post.body|truncatewords_html:30 }}
-                </div>
-                <div class="post__meta">
-                    {{ post.date_published }}
-                </div>
-            </div>
-        {% endfor %}
+            
+            {% endfor %}
+
+        {% else %}
+            
+            <br><br>
+
+            <h3>We're sorry, but there are no posts in this category yet.</h3>
+
+        {% endif %}
+
     </div>
 
 {% endblock content %}
