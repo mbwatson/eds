@@ -18,9 +18,13 @@ def detail(request, post_slug):
     return render(request, 'blog/detail.html', context)
 
 def category(request, category_slug):
-    category = get_object_or_404(Category, slug=category_slug)
-    categories = get_list_or_404(Category)
-    posts = get_list_or_404(Post.objects.published(), category=category.pk)
+    categories = Category.objects.all()
+    try:
+        category = categories.get(slug=category_slug)
+        posts = Post.objects.published().filter(category__pk=category.pk)
+    except Category.DoesNotExist:
+        category = categories.first()
+        posts = []
     context = {
         'category': category,
         'categories': categories,
