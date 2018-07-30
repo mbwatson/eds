@@ -20,12 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kge&ff7=%nix3h$7!kuazj=5n&2m@r*-eec0yn!mb=aba(=qt!'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
+# 'kge&ff7=%nix3h$7!kuazj=5n&2m@r*-eec0yn!mb=aba(=qt!'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    'earthdatascience.renci.org',
+]
 
 
 # Application definition
