@@ -10,4 +10,4 @@ Set `DEBUG = True` in `/eds/settings.py`, and execute `python3 manage.py runserv
 
 ## Production
 
-Set `DEBUG = False` and in `/eds/settings.py` and set yourself a `DJANGO_SECRET_KEY` environment variable.
+Set `DEBUG = False` and add desired host, say `earthdatascience.renci.org`, to the `ALLOWED_HOSTS` list in `/eds/settings.py`. Also set yourself a `DJANGO_SECRET_KEY` environment variable.
