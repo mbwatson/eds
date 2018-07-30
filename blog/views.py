@@ -21,10 +21,9 @@ def category(request, category_slug):
     categories = Category.objects.all()
     try:
         category = categories.get(slug=category_slug)
-        posts = Post.objects.published().filter(category__pk=category.pk)
     except Category.DoesNotExist:
         category = categories.first()
-        posts = []
+    posts = Post.objects.published().filter(category__pk=category.pk)
     context = {
         'category': category,
         'categories': categories,
